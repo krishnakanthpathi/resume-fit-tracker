@@ -1,0 +1,2 @@
+docker build -t resume-fit-evaluator .
+docker run -p 8000:8000 resume-fit-evaluator

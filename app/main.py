@@ -4,7 +4,7 @@ from app.models import health_response, version_response , learning_step
 
 from typing import List , Optional , Dict
 
-from app.skill_extractor import extract_skills , extract_missing_skills, extract_matched_skills
+from app.skill_extractor import extract_missing_skills, extract_matched_skills
 from app.fit_score_engine import fit_score_calculater , get_verdict
 from app.learning_paths_extractor import paths_extractor , learning_steps_extractor
 from app.fit_score_engine import fit_score_calculater_v2
@@ -17,11 +17,11 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
+    return health_response(status="ok")
 
 @app.get("/version")
 async def version_info():
-    return {"model_version": "1.0.0"}
+    return version_response(model_version="1.0.0")
 
 @app.post("/evaluate-fit")
 async def evaluate_fit(resquest: evaluate_fit_request):

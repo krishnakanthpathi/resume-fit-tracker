@@ -1,2 +1,6 @@
 docker build -t resume-fit-evaluator .
 docker run -p 8000:8000 resume-fit-evaluator
+
+python -m uvicorn app.main:app --reload
+
+python -m unittest discover app/tests/

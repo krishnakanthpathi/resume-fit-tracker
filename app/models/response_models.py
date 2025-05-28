@@ -1,22 +1,6 @@
-"""
-
-file: app/models.py
-description: The Inputs and Outputs are validated using Pydantic models.
-
-"""
-
 from typing import List, Optional
 from pydantic import BaseModel
-
-# Request Model
-class evaluate_fit_request(BaseModel):
-    resume_text: str
-    job_description: str
-
-# Learning Step
-class learning_step(BaseModel):
-    skill: str
-    steps: List[str]
+from app.models.common_models import learning_step
 
 # Response Model
 class evaluate_fit_response(BaseModel):

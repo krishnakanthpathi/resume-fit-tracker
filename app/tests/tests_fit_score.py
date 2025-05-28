@@ -1,5 +1,5 @@
 import unittest
-from app.fit_score_engine import fit_score_calculater
+from app.services.fit_score_engine import fit_score_calculater
 from pydantic import BaseModel
 
 class DummyRequest(BaseModel):

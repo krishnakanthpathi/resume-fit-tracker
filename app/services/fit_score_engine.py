@@ -1,9 +1,14 @@
-from typing import Dict, Any
+from typing import Dict, Any , List
 
 from app.models.request_models import evaluate_fit_request
+from app.models.response_models import evaluate_fit_response
+from app.models.common_models import learning_step
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+
+from app.services.skill_extractor import extract_missing_skills, extract_matched_skills
+from app.services.learning_paths_extractor import learning_steps_extractor
 
 from json import load, JSONDecodeError
 
@@ -41,3 +46,47 @@ def get_verdict(score: float) -> str:
     except (FileNotFoundError, JSONDecodeError, KeyError) as e:
         print(f"Error in get_verdict: {e}")
         return "unknown"
+
+def get_fit_response(req: evaluate_fit_request) -> evaluate_fit_response:
+    try:
+        missing_skills : list = extract_missing_skills(req)
+        matched_skills : list = extract_matched_skills(req)
+        fit_score : int  = fit_score_calculater(req)
+        verdict : str = get_verdict(fit_score) 
+        recommended_learning_track : List[learning_step]  = learning_steps_extractor(missing_skills , verdict)
+        response : evaluate_fit_response = evaluate_fit_response(
+            fit_score=fit_score,
+            verdict=verdict,
+            missing_skills=missing_skills,
+            matched_skills=matched_skills,
+            recommended_learning_track=recommended_learning_track,
+            status="ok"
+        )
+        return response
+    except Exception as e:
+        return evaluate_fit_response(
+            fit_score=0,
+            verdict="error",
+            missing_skills=[],
+            matched_skills=[],
+            recommended_learning_track=[],
+            status="error",
+        )
+
+def get_fit_response_all(req: List[evaluate_fit_request]) -> List[evaluate_fit_response]:
+    try:
+        responses = []
+        for request in req:
+            response = get_fit_response(request)
+            responses.append(response)
+        return responses
+    except Exception as e:
+        print(f"Error in get_fit_response_all: {e}")
+        return [evaluate_fit_response(
+            fit_score=0,
+            verdict="error",
+            missing_skills=[],
+            matched_skills=[],
+            recommended_learning_track=[],
+            status="error",
+        )]

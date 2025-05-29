@@ -21,6 +21,19 @@ def paths_extractor(missig_skills: list) -> List[learning_step]:
                 extracted_paths.append(learning_path)
             except Exception as e:
                 print(f"Error creating learning_step for skill '{skill}': {e}")
+        else:
+            print(skill)
+            # Append missing skill to data/missing_skills.json
+            try:
+                with open('app/data/missing_track.json', 'r') as missing_file:
+                    missing_skills_data = json.load(missing_file)
+            except (FileNotFoundError, json.JSONDecodeError):
+                missing_skills_data = []
+
+            if skill not in missing_skills_data:
+                missing_skills_data.append(skill)
+                with open('app/data/missing_track.json', 'w') as missing_file:
+                    json.dump(missing_skills_data, missing_file, indent=4)
 
     return extracted_paths
 

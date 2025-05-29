@@ -3,5 +3,4 @@ uvicorn
 scikit-learn
 pydantic
 pandas
-sentence-transformers
 httpx

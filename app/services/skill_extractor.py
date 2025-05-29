@@ -3,6 +3,7 @@ from pandas import read_csv
 from app.utils.text_cleaner import clean_text
 
 from app.models.request_models import evaluate_fit_request
+import re
 
 try:
     df = read_csv('app/data/skills_dataset.csv', names=['skills'])
@@ -14,16 +15,16 @@ except Exception as e:
 def extract_skills(text: str) -> set:
     try:
         text = clean_text(text)
-        text = set(text.split())  # Convert to set for faster lookup
         found_skills = set()
         for skill in skills:
-            if skill.lower() in text:
+            pattern = r'\b' + re.escape(skill.lower()) + r'\b(?=\s|[.,;:!?]|\n|$)'
+            if re.search(pattern, text):
                 found_skills.add(skill.lower())
         return found_skills
     except Exception as e:
         print(f"Error extracting skills: {e}")
         return set()
-
+      
 def extract_missing_skills(req: evaluate_fit_request) -> list:
     try:
         resume_text: str = req.resume_text
@@ -32,6 +33,7 @@ def extract_missing_skills(req: evaluate_fit_request) -> list:
         resume_skills = extract_skills(resume_text)
         job_skills = extract_skills(job_description)
 
+        # Find skills in job description that are not in resume
         missing_skills = job_skills - resume_skills
 
         return list(missing_skills)

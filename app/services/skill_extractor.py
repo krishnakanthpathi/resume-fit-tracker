@@ -1,9 +1,13 @@
 from pandas import read_csv
+from functools import cache
 
 from app.utils.text_cleaner import clean_text
 
 from app.models.request_models import evaluate_fit_request
-import re
+
+from spacy import load
+from spacy.matcher import PhraseMatcher
+
 
 try:
     df = read_csv('app/data/skills_dataset.csv', names=['skills'])
@@ -12,18 +16,31 @@ except Exception as e:
     print(f"Error loading skills dataset: {e}")
     skills = []
 
+try:
+    nlp = load("en_core_web_sm")
+    
+    patterns = [nlp.make_doc(skill) for skill in skills]
+
+    matcher = PhraseMatcher(nlp.vocab)
+    matcher.add("SKILLS", patterns)
+
+except OSError:
+    print("Spacy model 'en_core_web_sm' not found.'")
+    nlp = None
+
+@cache
 def extract_skills(text: str) -> set:
-    try:
-        text = clean_text(text)
-        found_skills = set()
-        for skill in skills:
-            pattern = r'\b' + re.escape(skill.lower()) + r'\b(?=\s|[.,;:!?]|\n|$)'
-            if re.search(pattern, text):
-                found_skills.add(skill.lower())
-        return found_skills
-    except Exception as e:
-        print(f"Error extracting skills: {e}")
-        return set()
+    text = clean_text(text)
+    doc = nlp(text)
+    matches = matcher(doc)
+    
+    found_skills = set()
+    for match_id, start, end in matches:
+        span = doc[start:end]
+        found_skills.add(span.text)
+        
+    return found_skills
+        
       
 def extract_missing_skills(req: evaluate_fit_request) -> list:
     try:

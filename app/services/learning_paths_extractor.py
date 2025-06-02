@@ -22,11 +22,12 @@ except (FileNotFoundError, json.JSONDecodeError) as e:
 def paths_extractor(missig_skills: list) -> List[learning_step]:
     extracted_paths = []
     for skill in missig_skills:
-        if skill in learning_paths:
+        search_skill = skill.strip().lower()
+        if search_skill in learning_paths:
             try:
                 learning_path = learning_step(
                     skill=skill,
-                    steps=learning_paths[skill]
+                    steps=learning_paths[search_skill]
                 )
                 extracted_paths.append(learning_path)
             except Exception as e:

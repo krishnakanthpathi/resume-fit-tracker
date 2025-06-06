@@ -17,11 +17,11 @@ except Exception as e:
     skills = []
 
 try:
-    nlp = load("en_core_web_sm")
+    nlp = load("en_core_web_lg")
     
     patterns = [nlp.make_doc(skill) for skill in skills]
 
-    matcher = PhraseMatcher(nlp.vocab)
+    matcher = PhraseMatcher(nlp.vocab ,  attr="LOWER")
     matcher.add("SKILLS", patterns)
 
 except OSError:
@@ -46,10 +46,12 @@ def extract_missing_skills(req: evaluate_fit_request) -> list:
     try:
         resume_text: str = req.resume_text
         job_description: str = req.job_description
-
+        print(resume_text)
+        print(job_description)
         resume_skills = extract_skills(resume_text)
         job_skills = extract_skills(job_description)
-
+        print(f"Resume Skills: {resume_skills}")
+        print(f"Job Skills: {job_skills}")
         # Find skills in job description that are not in resume
         missing_skills = job_skills - resume_skills
 

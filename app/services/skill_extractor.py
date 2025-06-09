@@ -46,12 +46,12 @@ def extract_missing_skills(req: evaluate_fit_request) -> list:
     try:
         resume_text: str = req.resume_text
         job_description: str = req.job_description
-        print(resume_text)
-        print(job_description)
+        # print(resume_text)
+        # print(job_description)
         resume_skills = extract_skills(resume_text)
         job_skills = extract_skills(job_description)
-        print(f"Resume Skills: {resume_skills}")
-        print(f"Job Skills: {job_skills}")
+        # print(f"Resume Skills: {resume_skills}")
+        # print(f"Job Skills: {job_skills}")
         # Find skills in job description that are not in resume
         missing_skills = job_skills - resume_skills
 

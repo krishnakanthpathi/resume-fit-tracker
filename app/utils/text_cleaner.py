@@ -4,7 +4,7 @@ from typing import List
 
 
 def clean_text(text: str) -> str:
-    # text = text.lower().strip()  # Lowercase and trim
+    text = text.lower().strip()  # Lowercase and trim
     text = normalize_text(text)  # Normalize aliases from config.json
     res = []
     for char in text:

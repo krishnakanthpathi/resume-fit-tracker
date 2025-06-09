@@ -19,7 +19,7 @@ except Exception as e:
 try:
     nlp = load("en_core_web_sm")
     
-    patterns = [nlp.make_doc(skill) for skill in skills]
+    patterns = [nlp.make_doc(skill.lower()) for skill in skills]
 
     matcher = PhraseMatcher(nlp.vocab ,  attr="LOWER")
     matcher.add("SKILLS", patterns)

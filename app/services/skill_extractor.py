@@ -17,7 +17,7 @@ except Exception as e:
     skills = []
 
 try:
-    nlp = load("en_core_web_lg")
+    nlp = load("en_core_web_sm")
     
     patterns = [nlp.make_doc(skill) for skill in skills]
 

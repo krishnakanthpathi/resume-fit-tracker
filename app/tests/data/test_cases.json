@@ -1,0 +1,157 @@
+[
+  {
+    "resume_text": "Experienced in Node.js and MongoDB. Familiar with containerized deployments using Docker.",
+    "job_description": "Looking for backend developers with expertise in Node.js, MongoDB, Docker, and AWS. System design knowledge is a bonus.",
+    "matched_skills": ["nodejs", "mongodb", "docker"],
+    "missing_skills": ["aws", "system design"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Worked extensively with Java and Spring Boot. Familiar with Docker.",
+    "job_description": "Hiring Java backend developers with Spring Boot, Docker, AWS, and CI/CD experience.",
+    "matched_skills": ["java", "spring boot", "docker"],
+    "missing_skills": ["aws", "ci/cd"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Skilled in Python, Django, PostgreSQL and deployed apps on AWS.",
+    "job_description": "We need Python developers with Django, PostgreSQL, and AWS experience.",
+    "matched_skills": ["python", "django", "postgresql", "aws"],
+    "missing_skills": [],
+    "verdict": "strong_fit"
+  },
+  {
+    "resume_text": "Experienced in HTML, CSS, and basic React.",
+    "job_description": "Looking for frontend developers with strong React, Redux, and TypeScript.",
+    "matched_skills": ["react"],
+    "missing_skills": ["redux", "typescript"],
+    "verdict": "weak_fit"
+  },
+  {
+    "resume_text": "Built apps using Flask and SQLite, deployed on Heroku.",
+    "job_description": "Looking for Python developers with Flask, PostgreSQL, and Docker experience.",
+    "matched_skills": ["flask"],
+    "missing_skills": ["postgresql", "docker"],
+    "verdict": "weak_fit"
+  },
+  {
+    "resume_text": "Developed microservices using Go and deployed with Kubernetes.",
+    "job_description": "Hiring Go developers with Kubernetes, Docker, and CI/CD knowledge.",
+    "matched_skills": ["go", "kubernetes"],
+    "missing_skills": ["docker", "ci/cd"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Experience in AWS, Docker, and Terraform infrastructure as code.",
+    "job_description": "Looking for DevOps engineers with AWS, Docker, Terraform, and CI/CD.",
+    "matched_skills": ["aws", "docker", "terraform"],
+    "missing_skills": ["ci/cd"],
+    "verdict": "strong_fit"
+  },
+  {
+    "resume_text": "Used Java and Hibernate with MySQL. Basic exposure to Spring Boot.",
+    "job_description": "Looking for full-time Java developers with Spring Boot, Hibernate, MySQL.",
+    "matched_skills": ["java", "hibernate", "mysql", "spring boot"],
+    "missing_skills": [],
+    "verdict": "strong_fit"
+  },
+  {
+    "resume_text": "Skilled in JavaScript, React, Redux, and REST API integration.",
+    "job_description": "Frontend engineer role requiring React, Redux, TypeScript, and Jest.",
+    "matched_skills": ["react", "redux"],
+    "missing_skills": ["typescript", "jest"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Developed data pipelines using Spark and Python. Familiar with AWS.",
+    "job_description": "Looking for data engineers skilled in Python, Spark, AWS, and Airflow.",
+    "matched_skills": ["python", "spark", "aws"],
+    "missing_skills": ["airflow"],
+    "verdict": "strong_fit"
+  },
+  {
+    "resume_text": "Wrote scripts in Bash and managed deployments using Ansible.",
+    "job_description": "Looking for DevOps engineer with experience in Ansible, Docker, Jenkins.",
+    "matched_skills": ["ansible"],
+    "missing_skills": ["docker", "jenkins"],
+    "verdict": "weak_fit"
+  },
+  {
+    "resume_text": "Skilled in Python and Machine Learning using Scikit-learn and TensorFlow.",
+    "job_description": "Hiring ML engineers with Python, TensorFlow, Keras, and model deployment experience.",
+    "matched_skills": ["python", "tensorflow"],
+    "missing_skills": ["keras", "model deployment"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Developed full stack apps using MERN stack: MongoDB, Express, React, Node.js.",
+    "job_description": "Looking for MERN developers with Docker and AWS experience.",
+    "matched_skills": ["mongodb", "express", "react", "nodejs"],
+    "missing_skills": ["docker", "aws"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Built admin dashboards using Angular and Bootstrap. Worked with REST APIs.",
+    "job_description": "Frontend engineer needed with Angular, Bootstrap, and GraphQL.",
+    "matched_skills": ["angular", "bootstrap"],
+    "missing_skills": ["graphql"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Managed Kubernetes clusters and setup CI/CD pipelines using GitHub Actions.",
+    "job_description": "Hiring DevOps experts with Kubernetes, CI/CD, Docker, and Helm.",
+    "matched_skills": ["kubernetes", "ci/cd"],
+    "missing_skills": ["docker", "helm"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Worked on Django REST APIs and deployed them on Azure cloud.",
+    "job_description": "Backend developer needed with Django, PostgreSQL, and Azure experience.",
+    "matched_skills": ["django", "azure"],
+    "missing_skills": ["postgresql"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Built simple HTML/CSS static sites and used basic JavaScript.",
+    "job_description": "Looking for web devs with experience in modern JS frameworks like React or Vue.",
+    "matched_skills": ["javascript"],
+    "missing_skills": ["react", "vue"],
+    "verdict": "weak_fit"
+  },
+  {
+    "resume_text": "Used MySQL, Redis, and background jobs with Celery in Flask apps.",
+    "job_description": "We need backend devs with Flask, Redis, Celery, RabbitMQ.",
+    "matched_skills": ["flask", "redis", "celery"],
+    "missing_skills": ["rabbitmq"],
+    "verdict": "strong_fit"
+  },
+  {
+    "resume_text": "Proficient in TypeScript, React, and styled-components.",
+    "job_description": "Frontend role using React, TypeScript, Material UI, and testing with Cypress.",
+    "matched_skills": ["react", "typescript"],
+    "missing_skills": ["material ui", "cypress"],
+    "verdict": "moderate_fit"
+  },
+  {
+    "resume_text": "Experienced in managing cloud infrastructure using AWS and Docker.",
+    "job_description": "Looking for cloud engineers with AWS, Docker, and system design experience.",
+    "matched_skills": ["aws", "docker"],
+    "missing_skills": ["system design"],
+    "verdict": "moderate_fit"
+  },
+    {
+        "resume_text": "Built RESTful APIs using Node.js and Express. Familiar with MongoDB.",
+        "job_description": "Backend developer needed with Node.js, Express, MongoDB, and Docker.",
+        "matched_skills": ["nodejs", "express", "mongodb"],
+        "missing_skills": ["docker"],
+        "verdict": "moderate_fit"
+    },
+    {
+        "resume_text": "Worked with Ruby on Rails and PostgreSQL. Basic knowledge of Docker.",
+        "job_description": "Hiring Ruby developers with Rails, PostgreSQL, Docker, and CI/CD experience.",
+        "matched_skills": ["ruby", "rails", "postgresql"],
+        "missing_skills": ["docker", "ci/cd"],
+        "verdict": "moderate_fit"
+    }
+
+]

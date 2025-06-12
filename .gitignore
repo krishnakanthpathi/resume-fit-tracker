@@ -76,5 +76,5 @@ venv.bak/
 node_modules/
 
 # Data (if temporary or large — optional)
-data/
-!data/skills_dataset.csv  # keep sample dataset
+# data/
+# !data/skills_dataset.csv  # keep sample dataset

@@ -1,0 +1,30 @@
+{ 
+  
+    "fit_score_cutoffs": {
+    "strong_fit": 0.35,
+    "moderate_fit": 0.25,
+    "weak_fit": 0.1
+    },
+
+    "skill_alias": {
+        "amazon web services": "aws",
+        "express": "express.js",
+        "aws cloud": "aws",
+        "ec2": "aws",
+        "nodejs": "node.js",
+        "javascript": "javascript",
+        "structured query language": "sql",
+        "postgresql": "sql",
+        "containers": "docker",
+        "docker containers": "docker",
+        "cloud computing": "cloud basics",
+        "system architecture": "system design"
+    },
+    "max_learning_steps": 4 ,
+    "learning_steps_cutoffs" : {
+        "strong_fit" : 1 ,
+        "moderate_fit" : 2,
+        "weak_fit" : 4
+    }
+    
+}

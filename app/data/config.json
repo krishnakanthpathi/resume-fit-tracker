@@ -1,9 +1,9 @@
 { 
   
     "fit_score_cutoffs": {
-    "strong_fit": 0.35,
-    "moderate_fit": 0.25,
-    "weak_fit": 0.1
+        "strong_fit": 0.75,
+        "moderate_fit": 0.55,
+        "weak_fit": 0.35    
     },
 
     "skill_alias": {

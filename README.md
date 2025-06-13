@@ -1,11 +1,11 @@
 
 # Resume Fit Evaluation System
 
-This project is an intelligent API-based system that evaluates how well a candidate's resume fits a given job description using natural language processing and sentence embeddings.
+This project is an intelligent API-based system that evaluates how well a candidate's resume fits a given job description using natural language processing and TF-IDF vectorization.
 
 ## 🚀 Features
 
-- Fit score generation using `SentenceTransformer (MiniLM)`
+- Fit score generation using `TF-IDF Vectorization + Cosine Similarity`
 - Skill extraction using `SpaCy` and a custom skills dataset
 - Matched vs. missing skills identification
 - Personalized learning path recommendations based on skill gaps
@@ -16,10 +16,9 @@ This project is an intelligent API-based system that evaluates how well a candid
 
 - Python 3.x
 - FastAPI
-- SentenceTransformers (`all-MiniLM-L6-v2`)
+- Scikit-learn (`TfidfVectorizer`)
 - SpaCy
 - Pandas
-- Scikit-learn
 - JSON
 
 ## 📦 Project Structure
@@ -41,7 +40,7 @@ RESUME_FIT_TRACKER/
 │   │   └── models.py                    # (Optional) Base or other models
 │   │
 │   ├── services/
-│   │   ├── fit_score_engine.py          # Core logic for score calculation and verdict
+│   │   ├── fit_score_engine.py          # Core logic for score calculation and verdict (TF-IDF based)
 │   │   ├── learning_paths_extractor.py  # Suggest learning steps for missing skills
 │   │   └── skill_extractor.py           # Extract matched and missing skills using SpaCy
 │   │
@@ -65,14 +64,13 @@ RESUME_FIT_TRACKER/
 ## 🧠 How It Works
 
 1. **Input**: Resume text and Job Description.
-2. **Embedding**: Texts are encoded using `SentenceTransformer` to get semantic vectors.
-3. **Similarity**: Cosine similarity calculates a Fit Score (0 to 1) uses v1.
+2. **Vectorization**: Texts are vectorized using `TF-IDF Vectorizer` to get feature vectors.
+3. **Similarity**: Cosine similarity calculates a Fit Score (0 to 1) using TF-IDF vectors.
 4. **Verdict**: Based on score, result is classified as `Strong Fit`, `Moderate Fit`, or `Weak Fit`.
 5. **Skills**: Skills are extracted using `SpaCy PhraseMatcher`.
 6. **Learning Path**: For missing skills, learning steps are suggested.
 
 ***version*** : v1 - TF-IDF + Cosine Similarity
-          v2 - SentenceTransforme
 
 ## 🖥️ API Endpoints
 

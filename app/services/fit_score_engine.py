@@ -11,22 +11,6 @@ from app.services.skill_extractor import extract_missing_skills, extract_matched
 from app.services.learning_paths_extractor import learning_steps_extractor
 
 from json import load, JSONDecodeError
-from sentence_transformers import SentenceTransformer, util
-
-
-def fit_score_calculater_v2(req: evaluate_fit_request) -> float:
-    try:
-        resume_text: str = req.resume_text
-        job_description_text: str = req.job_description
-
-        model = SentenceTransformer('all-MiniLM-L6-v2')
-        embeddings = model.encode([resume_text, job_description_text], convert_to_tensor=True)
-        cosine_sim = util.pytorch_cos_sim(embeddings[0], embeddings[1])
-
-        return float(cosine_sim.item())
-    except Exception as e:
-        print(f"Error in fit_score_calculater_v2: {e}")
-        return 0.0
 
 def fit_score_calculater(req: evaluate_fit_request) -> float:
     try:

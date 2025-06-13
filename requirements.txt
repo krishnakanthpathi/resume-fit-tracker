@@ -5,5 +5,3 @@ pydantic
 pandas
 httpx
 spacy
-sentence-transformers
-huggingface_hub

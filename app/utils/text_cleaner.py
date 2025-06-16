@@ -8,7 +8,7 @@ def clean_text(text: str) -> str:
     text = normalize_text(text)  # Normalize aliases from config.json
     res = []
     for char in text:
-        if char.isalnum() or char.isspace() or char in ['.', ',', '-', '_', '@', '#', '$', '%', '&', '*']:
+        if char.isalnum() or char.isspace() or char in ['.', ',', '-', '_', '@', '#', '/', '%', '&', '*']:
             res.append(char)
     return ''.join(res).strip()
 

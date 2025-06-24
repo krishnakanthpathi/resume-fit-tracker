@@ -4,13 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN apt-get update && apt-get install -y \
-    gcc \
-    g++ 
-
 RUN pip install --no-cache-dir -r requirements.txt
-
-RUN huggingface-cli download sentence-transformers/all-MiniLM-L6-v2
 
 RUN python -m spacy download en_core_web_sm
 

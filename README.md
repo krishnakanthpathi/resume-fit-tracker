@@ -71,7 +71,7 @@ RESUME_FIT_TRACKER/
 5. **Skills**: Skills are extracted using `SpaCy PhraseMatcher`.
 6. **Learning Path**: For missing skills, learning steps are suggested.
 
-***version*** : v1 - TF-IDF + Cosine Similarity
+***version*** : v1 - TF-IDF + Cosine Similarity <br/>
           v2 - SentenceTransforme
 
 ## 🖥️ API Endpoints
